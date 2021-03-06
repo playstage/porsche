@@ -10,6 +10,9 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -40,10 +43,17 @@
       <option name="presentableId" value="Default" />
       <updated>1615029442136</updated>
       <workItem from="1615029443227" duration="463000" />
+      <workItem from="1615029950073" duration="321000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="505" y="250" key="search.everywhere.popup" timestamp="1615030215465">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="505" y="250" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1615030215465" />
   </component>
 </project>
