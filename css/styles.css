@@ -1880,6 +1880,7 @@ a:hover.back-to-top {
 	.cards-1 .card {
 		display: inline-block;
 		max-width: 17.125rem;
+		min-width: 16rem;
 		vertical-align: top;
 	}
 
