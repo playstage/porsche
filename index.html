@@ -88,14 +88,14 @@
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#contact">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" id="custom-login-btn" href="javascript:loginWithKakao()">
-                        <img
-                            src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
-                            width="222"
-                        />
-                    </a>
-                </li>
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link page-scroll" id="custom-login-btn" href="javascript:loginWithKakao()">-->
+<!--                        <img-->
+<!--                            src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"-->
+<!--                            width="222"-->
+<!--                        />-->
+<!--                    </a>-->
+<!--                </li>-->
             </ul>
 <!--            <span class="nav-item social-icons">-->
 <!--                <span class="fa-stack">-->
@@ -125,9 +125,19 @@
                         <div class="text-container">
                             <h1><span class="turquoise">난민노노</span> <br/> 손쉽게 집 알아보기</h1>
                             <p class="p-large">우리에게 알아보고 싶은 집을 알려주세요!</p>
-                            <a class="btn-solid-lg page-scroll" href="#services">DISCOVER</a>
-                            <div id="kakao-talk-channel-chat-button"></div>
-                            <div id="create-channel-add-button"></div>
+<!--                            <div id="kakao-talk-channel-chat-button">-->
+<!--                                <img-->
+<!--                                    src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"-->
+<!--                                    width="222"-->
+<!--                                />-->
+<!--                            </div>-->
+
+                            <a id="channel-chat-button" href="#" onclick="void chatChannel();">
+                                <img
+                                    src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
+                                    width="222"
+                                />
+                            </a>
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-6">
@@ -974,6 +984,11 @@
             channelPublicId: '_MaNxkK',
         })
 
+        function chatChannel() {
+            Kakao.Channel.chat({
+                channelPublicId: '_MaNxkK',
+            })
+        }
         function loginWithKakao() {
             Kakao.Auth.login({
                 success: function(authObj) {
