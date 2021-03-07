@@ -88,21 +88,29 @@
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#contact">Contact</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" id="custom-login-btn" href="javascript:loginWithKakao()">
+                        <img
+                            src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
+                            width="222"
+                        />
+                    </a>
+                </li>
             </ul>
-            <span class="nav-item social-icons">
-                <span class="fa-stack">
-                    <a href="#your-link">
-                        <i class="fas fa-circle fa-stack-2x facebook"></i>
-                        <i class="fab fa-facebook-f fa-stack-1x"></i>
-                    </a>
-                </span>
-                <span class="fa-stack">
-                    <a href="#your-link">
-                        <i class="fas fa-circle fa-stack-2x twitter"></i>
-                        <i class="fab fa-twitter fa-stack-1x"></i>
-                    </a>
-                </span>
-            </span>
+<!--            <span class="nav-item social-icons">-->
+<!--                <span class="fa-stack">-->
+<!--                    <a href="#your-link">-->
+<!--                        <i class="fas fa-circle fa-stack-2x facebook"></i>-->
+<!--                        <i class="fab fa-facebook-f fa-stack-1x"></i>-->
+<!--                    </a>-->
+<!--                </span>-->
+<!--                <span class="fa-stack">-->
+<!--                    <a href="#your-link">-->
+<!--                        <i class="fas fa-circle fa-stack-2x twitter"></i>-->
+<!--                        <i class="fab fa-twitter fa-stack-1x"></i>-->
+<!--                    </a>-->
+<!--                </span>-->
+<!--            </span>-->
         </div>
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
@@ -965,6 +973,17 @@
             container: '#create-channel-add-button',
             channelPublicId: '_MaNxkK',
         })
+
+        function loginWithKakao() {
+            Kakao.Auth.login({
+                success: function(authObj) {
+                    alert(JSON.stringify(authObj))
+                },
+                fail: function(err) {
+                    alert(JSON.stringify(err))
+                },
+            })
+        }
     </script>
 </body>
 </html>
