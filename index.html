@@ -104,6 +104,8 @@
                             <h1><span class="turquoise">난민노노</span> <br/> 손쉽게 집 알아보기</h1>
                             <p class="p-large">우리에게 알아보고 싶은 집을 알려주세요!</p>
                             <a class="btn-solid-lg page-scroll" href="#services">DISCOVER</a>
+                            <div id="kakao-talk-channel-chat-button"></div>
+                            <div id="create-channel-add-button"></div>
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-6">
@@ -935,5 +937,20 @@
     <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
     <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
     <script src="js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="js/kakao.min.js"></script>
+    <script type="text/javascript">
+        // SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해 주세요.
+        Kakao.init('1affa7cd8e3a9c1df875d2524f21f0e3');
+
+        Kakao.Channel.createChatButton({
+            container: '#kakao-talk-channel-chat-button',
+            channelPublicId: '_MaNxkK' // 카카오톡 채널 홈 URL에 명시된 id로 설정합니다.
+        });
+
+        Kakao.Channel.createAddChannelButton({
+            container: '#create-channel-add-button',
+            channelPublicId: '_MaNxkK',
+        })
+    </script>
 </body>
 </html>
