@@ -532,16 +532,6 @@
         // SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해 주세요.
         Kakao.init('1affa7cd8e3a9c1df875d2524f21f0e3');
 
-        Kakao.Channel.createChatButton({
-            container: '#kakao-talk-channel-chat-button',
-            channelPublicId: '_MaNxkK' // 카카오톡 채널 홈 URL에 명시된 id로 설정합니다.
-        });
-
-        Kakao.Channel.createAddChannelButton({
-            container: '#create-channel-add-button',
-            channelPublicId: '_MaNxkK',
-        })
-
         function chatChannel() {
             Kakao.Channel.chat({
                 channelPublicId: '_MaNxkK',
