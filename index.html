@@ -405,6 +405,10 @@
                 'event_label':'첫상담'
             }) // send events
 
+            gtag('event','first_chat', {
+                'event_category':'first_chat',
+                'event_label':'first_chat'
+            })
             Kakao.Channel.chat({
                 channelPublicId: '_MaNxkK',
             })
