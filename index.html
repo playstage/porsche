@@ -400,6 +400,11 @@
         Kakao.init('1affa7cd8e3a9c1df875d2524f21f0e3');
 
         function chatChannel() {
+            gtag('event','버튼클릭', {
+                'event_category':'상담하기',
+                'event_label':'첫상담'
+            }) // send events
+
             Kakao.Channel.chat({
                 channelPublicId: '_MaNxkK',
             })
