@@ -417,6 +417,8 @@
                 'previous_page': document.referrer
             }) // send events
 
+            publishMessage("C01QWB415FU", "상담버튼클릭 ( from - "+ document.referrer + ")");
+
             Kakao.Channel.chat({
                 channelPublicId: '_MaNxkK',
             })
@@ -430,6 +432,31 @@
                     alert(JSON.stringify(err))
                 },
             })
+        }
+
+        // Post a message to a channel your app is in using ID and message text
+        function publishMessage(id, text) {
+            var apiUrl = "https://slack.com/api/chat.postMessage";
+            var token = "xoxb-1855238358001-1905196854560-Xjtm3YlHuoCf1Brz8wungFfx";
+            var channel = id;
+            var text = text;
+
+            $.ajax({
+                data: {
+                    "token": token,
+                    "channel": channel,
+                    "text": text
+                },
+                dataType: 'text',
+                type: 'POST',
+                url: apiUrl,
+                error: function(xhr,status,error){
+                    console.log("error: " + error);
+                },
+                success: function(data) {
+                    console.log("result: " + data);
+                }
+            });
         }
     </script>
 
