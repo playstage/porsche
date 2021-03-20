@@ -437,15 +437,13 @@
         // Post a message to a channel your app is in using ID and message text
         function publishMessage(id, text) {
             if (!document.URL.includes("localhost")) {
-                var apiUrl = "https://slack.com/api/chat.postMessage";
-                var token = "xoxb-1855238358001-1905196854560-WplXX6UjuRK1cHOSXOVovBFr";
-                var channel = id;
-                var text = text;
+                const apiUrl = "https://slack.com/api/chat.postMessage";
+                const token = "xoxb-1855238358001-1905196854560-WplXX6UjuRK1cHOSXOVovBFr";
 
                 $.ajax({
                     data: {
                         "token": token,
-                        "channel": channel,
+                        "channel": id,
                         "text": text
                     },
                     dataType: 'text',
