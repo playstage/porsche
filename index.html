@@ -411,14 +411,13 @@
         Kakao.init('1affa7cd8e3a9c1df875d2524f21f0e3');
 
         function chatChannel() {
-            gtag('event','상담버튼클릭', {
-                'event_category':'상담하기',
-                'event_label': document.referrer,
-                'previous_page': document.referrer
-            }) // send events
-
-            publishMessage("C01QWB415FU", "상담버튼클릭 ( url - " + document.URL + ", from - "+ document.referrer + ")");
-
+            if (!document.URL.includes("localhost")) {
+                gtag('event', '상담버튼클릭', {
+                    'event_category': document.referrer,
+                    'event_label': document.referrer,
+                    'previous_page': document.referrer
+                }) // send events
+            }
             Kakao.Channel.chat({
                 channelPublicId: '_MaNxkK',
             })
@@ -434,30 +433,6 @@
             })
         }
 
-        // Post a message to a channel your app is in using ID and message text
-        function publishMessage(id, text) {
-            // if (!document.URL.includes("localhost")) {
-                const apiUrl = "https://slack.com/api/chat.postMessage";
-                const token = "xoxb-1855238358001-1905196854560-MmlnNt80SuJ1VmmpVfweGy7z";
-
-                $.ajax({
-                    data: {
-                        "token": token,
-                        "channel": id,
-                        "text": text
-                    },
-                    dataType: 'text',
-                    type: 'POST',
-                    url: apiUrl,
-                    error: function (xhr, status, error) {
-                        console.log("error: " + error);
-                    },
-                    success: function (data) {
-                        console.log("result: " + data);
-                    }
-                });
-            // }
-        }
     </script>
 
 </body>
