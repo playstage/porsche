@@ -444,15 +444,13 @@
 
                 $.ajax({
                     data: {
+                        "token": token,
                         "channel": channel,
                         "text": text
                     },
                     dataType: 'text',
                     type: 'POST',
                     url: apiUrl,
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader("Authorization","Bearer " + token);
-                    },
                     error: function (xhr, status, error) {
                         console.log("error: " + error);
                     },
