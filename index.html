@@ -438,19 +438,21 @@
         function publishMessage(id, text) {
             if (!document.URL.includes("localhost")) {
                 var apiUrl = "https://slack.com/api/chat.postMessage";
-                var token = "xoxb-1855238358001-1905196854560-hLsxpVEsCoOwqeQR8xF5YkXN";
+                var token = "xoxb-1855238358001-1905196854560-WplXX6UjuRK1cHOSXOVovBFr";
                 var channel = id;
                 var text = text;
 
                 $.ajax({
                     data: {
-                        "token": token,
                         "channel": channel,
                         "text": text
                     },
                     dataType: 'text',
                     type: 'POST',
                     url: apiUrl,
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization","Bearer " + token);
+                    },
                     error: function (xhr, status, error) {
                         console.log("error: " + error);
                     },
