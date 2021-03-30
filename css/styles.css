@@ -1860,8 +1860,12 @@ a:hover.back-to-top {
 
 	/* Header */
 	.header {
-		background: url('../images/header-background.jpg') center center no-repeat;
-		background-size: cover; 
+		background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url(../images/background1.jpeg);
+		/*background-image: url(../images/background.jpeg);*/
+		background-position: center;
+		background-size: cover;
+		background-attachment: fixed;
+		min-height: 1000px;
 	}
 
 	.header .header-content {
